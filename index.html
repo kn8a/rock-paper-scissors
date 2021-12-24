@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <button id=#rock data-pick=3>Rock</button>
+    <button id=#paper data-pick=1>Paper</button>
+    <button id=#scissors data-pick=2>Scissors</button>
+    <div class=results>
+        <div class=finalResult></div>
+    </div>
     <script>
-        const playPick = [null, 'Paper', 'Scissors', 'Rock']
+        const playPick = [null, 'Paper', 'Scissors', 'Rock'];
         function computerRnd(){ //get random number
             return Math.floor(Math.random() * (3 - 1) ) + 1; //gets random number from 1-2
         }
