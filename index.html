@@ -4,64 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <script>
-        const playPick = [null, 'Paper', 'Scissors', 'Rock']
-        function computerRnd(){ //get random number
-            return Math.floor(Math.random() * (3 - 1) ) + 1; //gets random number from 1-2
-        }
+    <div class="header">ROCK PAPER SCISSORS</div>
+    <div class="playArea">
+        <div class="section">
+            <h2 id="humanTitle">🧬 HUMAN</h2></p>
+            <div class="selection" id="humanSelect">😏</div>
+        </div>
+        <div class="section" id="#scoreboard">
+            <h2>📝 SCOREBOARD</h2>
+            <div class="totalScore">
+                <h2 id="playerCount">0</h2>
+                <h2>---</h2>
+                <h2 id="compCount">0</h2>
+            </div>
+            <div class="roundPlay">
+                <h2>📄 LOG</h2>
+                <h4 id="roundPlay"></h4>
+            </div>
 
-        function playerSel(){ //Popup for human player selection
-            result = prompt("1. Paper, 2. Scissors, 3. Rock\r\nEnter your selection:");
-            return result;
-        }
+        </div>
+        <div class="section">
+            <h2 id="compTitle">⚙️ COMPUTER</h2>
+            <div class="selection" id="compSelect">⚙️</div>
+        </div>
+    </div>
+    <div class="weaponChoice"><h2>Choose your weapon</h2></div>
+    <div class='gameButtons'>
+        <button class="game" id=#rock data-pick=3><h1>✊</h1>ROCK</button>
+        <button class="game" id=#paper data-pick=1><h1>🖐️</h1>PAPER</button>
+        <button class="game" id=#scissors data-pick=2><h1>✌️</h1>SCISSORS</button>
+    </div>
+    <div class='resetDiv'>
+        <button class="resetB" id="reset"><h1>↩️</h1> Reset</button>
+    </div>
+    <div class="spacerDiv">
+        <div class="finalResult"></div>
+    </div>
+    <div class="footer">kn8a</div>
 
-        function playRound(player, computer) { //compare two selections
-            if (player == computer) { //if selections are the same
-                return "tie";
-            }
-            else if (player==2 && computer==1 || player==3 && computer == 2 || player==1 && computer ==3) {
-                return "player";
-            }
-            else {
-                return "computer"; //if not tie and player didnt with then computer wins.
-            }
-        }
-
-        //declare variable for while logic
-        let winner = false;
-        //declare two counters
-        let playerCount = 0;
-        let computerCount = 0;
-
-        while (winner==false) { 
-            let player = playerSel(); //get player selection
-            let computer = computerRnd(); //get computer selection
-            let roundWinner = playRound(player,computer); //play one round
-            
-            if (roundWinner == "player"){ //when human wins round
-                playerCount++;
-                console.log("player count:", playerCount); //log player count
-                if (playerCount==5) {
-                    alert("Human player wins"); 
-                    winner=true; //breaks while loop
-                }
-            }
-            else if (roundWinner == "computer") { //when computer wins round
-                computerCount++;
-                console.log("computer count:", computerCount); //log computer count
-                if (computerCount==5) {
-                    alert("Computer wins");
-                    winner=true; //breaks while loop
-                }
-            }
-        }
-
-        
-
-
-    </script>
+    <script type="text/javascript" src="RPS.js"></script>
 </body>
 </html>
